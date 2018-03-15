@@ -9,6 +9,15 @@ function txt(tx){
   return document.createTextNode(tx);
 }
 
+Object.prototype.cla = function(className){
+    if(this.window){
+      return document.getElementsByClassName(className);
+    }
+    else{
+      return this.getElementsByClassName(className);
+    }
+};
+
 Object.prototype.tag = function(tag){
   if(this.window){
     return document.getElementsByTagName(tag);
